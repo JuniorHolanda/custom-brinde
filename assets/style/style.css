@@ -21,22 +21,30 @@
 
 }
 
+body {
+    height: 300vh;
+    display: flex;
+    width: 100%;
+    border: solid;
+}
+
 .customBrinde {
     display: flex;
     gap: 30px;
     background-color: #eff7fc;
+    width: 100%;
 }
 
 
 .sobreposicao {
     display: flex;
     width: 50%;
-    height: 90vh;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
     padding: 3rem;
+
     
 }
 
@@ -45,8 +53,6 @@
     position: absolute;
     border-radius: 60px;
     
-    
-
 }
 
 .controle {
