@@ -5,15 +5,39 @@
     valor.mudaMatiz = telaGira
 
 */
+
+
+function moveCaixa (frase) {
+    posicaoCaixaBtn.style.alighItens = `${frase}`
+
+}
+
+
+
+
 let scrollPosition = 0;
+let posicaoCaixaBtn = document.querySelector('.containerBTN')
+
+//----------------INÍCIO BOTÕES CORES-------------------
 
 let btnVermelho = document.querySelector('.btnVermelho');
 let btnAzul = document.querySelector('.btnAzul');
 let btnPreto = document.querySelector('.btnPreto');
 
+//----------------INÍCIO BOTÕES DESTAQUE----------------
+
+let btnCorpo = document.querySelector('#btnCorpo');
+let btnTampa = document.querySelector('#btnTampa');
+let btnDetalhe = document.querySelector('#btnDetalhe');
+
+//--------------INÍCIO SOBREPOSICAO IMAGENS-------------
+
 let parteCorpo = document.querySelector('.mudaCorpo')
 let parteTampa = document.querySelector('.mudaTampa')
 let parteDetalhes = document.querySelector('.mudaDetalhe')
+
+
+par
 
 window.addEventListener('scroll', function () {
     scrollPosition = this.window.scrollY;
@@ -22,7 +46,7 @@ window.addEventListener('scroll', function () {
 })
 
 
-
+btnVermelho.addEventListener
 
 /*
 let scrollPosition = 0;
