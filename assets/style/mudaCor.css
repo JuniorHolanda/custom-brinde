@@ -1,4 +1,11 @@
 .mudaCorpo {
     filter: hue-rotate(0deg);
-    transition: 1s;
+   
+}
+.mudaTampa {
+    filter: hue-rotate(0deg);
+
+}
+.mudaDetalhe {
+    filter: hue-rotate(0deg);
 }
