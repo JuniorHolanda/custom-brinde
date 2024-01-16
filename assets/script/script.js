@@ -1,22 +1,8 @@
-/*  telaGira = captura valores do scroll
-    valor.mudaMatiz =  muda a matiz  -> filter: hue-rotate(deg)
-    
-    criar uma funcao que altera o hue-rotate de 0 a 360.
-    valor.mudaMatiz = telaGira
-
-*/
-
-
-function moveCaixa (frase) {
-    posicaoCaixaBtn.style.alighItens = `${frase}`
-
-}
-
-
 
 
 let scrollPosition = 0;
 let posicaoCaixaBtn = document.querySelector('.containerBTN')
+let caixaVisivel = document.querySelector('.caixaBtn')
 
 //----------------INÍCIO BOTÕES CORES-------------------
 
@@ -37,16 +23,49 @@ let parteTampa = document.querySelector('.mudaTampa')
 let parteDetalhes = document.querySelector('.mudaDetalhe')
 
 
-par
+
+
 
 window.addEventListener('scroll', function () {
     scrollPosition = this.window.scrollY;
     parteCorpo.style.filter = 'hue-rotate(' + scrollPosition / 4 + 'deg)'
     parteTampa.style.filter = 'hue-rotate(' + scrollPosition / 3.8 + 'deg)'
+    
 })
 
 
-btnVermelho.addEventListener
+function moveCaixa (posicao) {
+    posicaoCaixaBtn.style.alignItems = posicao;
+}
+
+
+
+btnCorpo.addEventListener('mouseover', function () {
+    moveCaixa('flex-start')
+    caixaVisivel.style.opacity = '100%';
+});
+
+btnCorpo.addEventListener('mouseout', function () {
+    caixaVisivel.style.opacity = '0';
+});
+
+
+
+
+
+btnCorpo.addEventListener('mouseout', function () {
+    moveCaixa('center')
+});
+
+btnDetalhe.addEventListener('mouseover' , function () {
+    moveCaixa ('flex-end')
+})
+
+btnDetalhe.addEventListener('mouseout' , function () {
+    moveCaixa ('center')
+})
+
+
 
 /*
 let scrollPosition = 0;
