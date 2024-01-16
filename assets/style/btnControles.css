@@ -35,7 +35,15 @@
     gap: 1rem;
     position: relative;
 }
-.btnComponentesProduto {
+
+.btnDestaque {
+    width:70%;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.btnDestaqueItem {
     width: 10rem;
     height: 3rem;
     background-color: var(--corBase2);
@@ -47,13 +55,11 @@
     color: var(--corPrimaria);
     border: none;
     border-radius: 0.5rem;
-    cursor: pointer;
-    
+    cursor: pointer; 
 }
 
 .caixaBtn {
     display: flex;
-    flex-direction: row;
     align-items: center;
     background-color: var(--corBase2);
     justify-content: center;
@@ -67,10 +73,6 @@
     transform: translateY(15px);
     transition: 0.3s;
     transition-timing-function: ease-out;
-}
-
-.listaBtnDestaque {
-    display: none;
 }
 
 .caixaBtn::before{
@@ -101,15 +103,15 @@
     transition: 0.2s;
 }
 
-.btnCor1 {
+.btnVermelho {
     background-color: red;
 }
 
-.btnCor2 {
+.btnAzul {
     background-color: rgb(49, 30, 151);
 }
 
-.btnCor3 {
+.btnPreto {
     background-color: rgb(36, 36, 36);
 }
 
