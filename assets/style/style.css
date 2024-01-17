@@ -55,7 +55,7 @@ body {
     
 }
 
-.controle {
+.caixaControle {
     display: flex;
     flex-direction: column;
     justify-content: center;
