@@ -3,81 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>customBrinde</title>
     <link rel="stylesheet" href="assets/style/style.css">
-    <link rel="stylesheet" href="assets/style/btnControles.css">
-    <link rel="stylesheet" href="assets/style/mudaCor.css">
+    <title>customBrinde</title>
 </head>
 <body>
+    <div id="customBrinde" class="customBrindeContainer">
 
-    <section class="customBrinde">
-        
-       <!--------------------INICÍCIO DAS IMAGENS--------------------------------->
-       
-       <div class="sobreposicao">
-            <img class="fotos" src="assets/img/base.jpg" alt=""> <!--base para sombra-->
-            <img class="fotos" src="assets/img/camadaAjustes.png" alt=""> <!--layer de ajustes, ***não obrigatorio, objetivo = consertar falhas no recorte das imagens***-->
-            
-            <img class="fotos mudaCorpo" src="assets/img/corpo.png" alt="">
-            <img class="fotos mudaTampa" src="assets/img/tampa.png" alt="">
-            <img class="fotos mudaDetalhe" src="assets/img/detalhes.png" alt="">
+        <div id="produtos">
+
+            <img class="partesDoProduto" src="assets/img/base.jpg" alt="">
+            <img class="partesDoProduto" src="assets/img/camadaAjustes.png" alt="">
+            <img class="partesDoProduto" src="assets/img/corpo.png" alt="">
+            <img class="partesDoProduto" src="assets/img/detalhes.png" alt="">
+            <img class="partesDoProduto" src="assets/img/tampa.png" alt="">
+
         </div>
 
-        <!--------------------- FIM DAS IMAGENS----------------------------------->
+        <div class="painelDeControle">
 
-        <div class="caixaControle">
-           
-            <div class="info">
-                <h1>Personalize</h1>
-                <p>Dê vida às suas ideias de design, personalize seu brinde virtualmente e solicite um orçamento.</p>
+            <!-- Botões de controle principal  -->
+            <div class="btnPrincipaisContainer">
+                <button class="btnPrincipais" id="btnCorpo"> corpo </button>
+                <button class="btnPrincipais" id="btnDetalhes"> detalhes </button>
+                <button class="btnPrincipais" id="btnTampa"> tampa </button>
             </div>
 
-            <div class="containerBTN">
-                
-                <div class="btnDestaque">
-                    <button class="btnDestaqueItem">corpo</button>
-                    <button class="btnDestaqueItem">tampa</button>
-                    <button class="btnDestaqueItem">detalhes</button>
-                </div>
+            <!-- Botões de controle secundario  -->
+            <!-- <div class="btnSecundariosContainer">
+                <button class="btnSecundarios"> azul </button>
+                <button class="btnSecundarios"> vermelho </button>
+                <button class="btnSecundarios"> preto </button>
+            </div> -->
 
-                <div id="caixaBtn" class="caixaBtn some">
-                    <button class="btnCor btnVermelho"></button>
-                    <button class="btnCor btnAzul"></button>
-                    <button class="btnCor btnPreto"></button>
-                </div>
-            </div>
-            
-        </div>  
+        </div>
 
-        <!--------------------- FIM CONTROLE----------------------------------->
+    </div>
 
-       
-                <!-- Provavelmente apagarei pois está repetitivo, manipularei ele pelo js
-                    
-                    <div class="containerBTN">
-                    
-                    <div class="caixaBtn listaBtnDestaque">
-                        <button class="btnCor btnCor1"></button>
-                        <button class="btnCor btnCor2"></button>
-                        <button class="btnCor btnCor3"></button>
-                    </div>
-                </div>
-
-                <div class="containerBTN">
-                    
-                    <div class="caixaBtn listaBtnDestaque">
-                        <button class="btnCor btnCor1"></button>
-                        <button class="btnCor btnCor2"></button>
-                        <button class="btnCor btnCor3"></button>
-                    </div>
-                </div>
-            
-            -->
-            
-      
-    </section>
-        
-    
-    <script src="assets/script/script.js"></script>
+    <script src="assets/script/main.js"></script>
 </body>
 </html>
