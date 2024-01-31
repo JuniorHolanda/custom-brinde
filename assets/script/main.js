@@ -3,40 +3,40 @@ const btnDoCorpo = document.querySelector('#btnCorpo');
 const btnDoDetalhes = document.querySelector('#btnDetalhes');
 const btnDoTampa = document.querySelector('#btnTampa');
 
-// Obtém a referência do painel de controle
-const controleSecundario = document.querySelector('#controlePrincipal');
+// referencia o container pai de dos dois tipos de botões, principal e secundários
+const comtainerPaiDosBotoes = document.querySelector('#controlePrincipal');
 
-// container de botões de cores inserido dinamicamente
-const btnSecundarios = document.createElement('div');
-btnSecundarios.classList.add('btnSecundariosContainer');
+//cria e adiciona classe a uma div para a lista de botões secundários
+const containerBtnSecondarios = document.createElement('div');
+containerBtnSecondarios.classList.add('btnSecundariosContainer');
 
-//array de cores
-const cores = ['Azul','Vermelho','Preto'];
+//aray com as cores dos botões secundários
+const cores = ['Azul', 'Vermelho', 'Preto'];
 
-// função para criar e adicionando botões ao container dinamicamente
-function criarBotoes() {
-    cores.forEach (cor => {
-    const btn = document.createElement('button');
-    btn.classList.add('btnSecundarios');
-    btn.textContent = cor;
-    btnSecundarios.appendChild(btn);
+//Cria os 3 botões secundários e insere no elemento pai containerBtnSecondarios
+function criarBotoesSecundarios () {
+    cores.forEach(cor => {
+        const btnSecundario = document.createElement('button');
+        btnSecundario.classList.add('btnSecundarios' , `btnSecundarios${cor}`);
+        
+        // adiciona os botões criados no loop dento de um container
+        containerBtnSecondarios.appendChild(btnSecundario);
     });
+
+    // adiciona container de botões secundários no container de todos os botões
+    comtainerPaiDosBotoes.appendChild(containerBtnSecondarios);
 }
 
-// função para remover os botões
-function removerBotoes(){
-    btnSecundarios.innerHTML = '';
+function removerBotoesSecundarios() {
+    containerBtnSecondarios.remove();
 }
 
-// Evento para acionar a criação dos botões quando o mouse está sobre um botão principal
-btnDoCorpo.addEventListener('mouseover', criarBotoes);
-btnDoDetalhes.addEventListener('mouseover', criarBotoes);
-btnDoTampa.addEventListener('mouseover', criarBotoes);
+// evento para chmamar a função que insere o container e os botões secundários
+btnDoCorpo.addEventListener('mouseover' , criarBotoesSecundarios);
+btnDoDetalhes.addEventListener('mouseover' , criarBotoesSecundarios);
+btnDoTampa.addEventListener('mouseover' , criarBotoesSecundarios);
 
-// Evento para remover botões quando o mouse está fora de um botão principal
-btnDoCorpo.addEventListener('mouseout', removerBotoes);
-btnDoDetalhes.addEventListener('mouseout', removerBotoes);
-btnDoTampa.addEventListener('mouseout', removerBotoes);
-
-// Insere o btnSecundarios dentro da Div controlePrincipal, em baixo da btnPrincipaisContainer
-controleSecundario.insertAdjacentElement('beforeend', btnSecundarios);
+// evento para remover a função que insere o container e os botões secundários
+btnDoCorpo.addEventListener('mouseout' , removerBotoesSecundarios);
+btnDoDetalhes.addEventListener('mouseout' , removerBotoesSecundarios);
+btnDoTampa.addEventListener('mouseout' , removerBotoesSecundarios);
