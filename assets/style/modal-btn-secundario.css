@@ -1,0 +1,13 @@
+.containerBtnSecundario{
+    display: flex;
+    width:20%;
+    background-color: red;
+    text-align: center;
+}
+
+.containerModalBtnSecundario{
+    display: flex;
+    width: 30%;
+    background-color: blue;
+}
+
