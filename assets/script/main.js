@@ -4,50 +4,60 @@ const listaBtnMain = document.querySelectorAll('.btnPrincipais')
 // referencia o container pai dos dois tipos de botões, principal e secundários
 const containerPaiDosBotoes = document.querySelector('#controlePrincipal');
 
+const corpo = document.querySelector('#parteProdutoCorpo')
+const detalhe = document.querySelector('#parteProdutoDetalhes')
+const tampa = document.querySelector('#parteProdutoTampa')
+
 
 //----------------------- Cria os botões de cores e atribuem classe -----------------------------
 
-const nomeDasCores = [ 'Azul' , 'Vermelho' , 'Preto' ];
-const btnCor = [];
+const nomeDasCores = [ 'azul' , 'vermelho' , 'preto' ];
+let btnModal = null;
+let listaDeBotoes = [];
 
 let modalBtnSecundario = null;
-let btnModal = null;
 //função recebe como argumento o id da lista listaBtnMain 
 function mostraBotao (id) {
     if (modalBtnSecundario){
         modalBtnSecundario.remove();
         modalBtnSecundario = null;
-        btnModal = null;
+        
 
     } else {
         modalBtnSecundario = document.createElement('div');
         modalBtnSecundario.classList.add('containerModalBtnSecundario');
         containerPaiDosBotoes.appendChild(modalBtnSecundario);
 
-        // laço para a criação dos botões de cores cores
-
-        for (let i = 0; i < nomeDasCores.length; i++) {
-            // Verifica se o botão de cor já foi criado antes
-            let corJaAdicionada = btnCor.some(btn => btn.classList.contains(`btn${nomeDasCores[i]}`));
-            // se o resultado for diferente de contem:
-            if (!corJaAdicionada) {
-                btnModal = document.createElement('button');
-                btnModal.classList.add(`btn${nomeDasCores[i]}`, 'btnSecundario');
-                btnModal.textContent = nomeDasCores[i];
-                modalBtnSecundario.appendChild(btnModal);
-                btnCor.push(btnModal);
-            } else {
-                // Se o resultado é diferente de não conter então cria os botões mas não adiciona mais à lista
-                btnModal = document.createElement('button');
-                btnModal.classList.add(`btn${nomeDasCores[i]}`, 'btnSecundario');
-                btnModal.textContent = nomeDasCores[i];
-                modalBtnSecundario.appendChild(btnModal);
+        function mudacor (idDoElemento) {
+            if (id === 'btnCorpo'){
+                corpo.classList.add(idDoElemento)
+            } else if (id === 'btnDetalhes') {
+                detalhe.classList.add(idDoElemento)
+            } else if (id === 'btnTampa'){
+                tampa.classList.add(idDoElemento)
             }
-        
         }
-    }
-       
+
+        // laço para a criação dos botões de cores cores
+        for (let i = 0; i < nomeDasCores.length; i++) {
+            btnModal = document.createElement('button');
+            btnModal.classList.add(`btn${nomeDasCores[i]}`, 'btnSecundario');
+            btnModal.id = `btnControle${nomeDasCores[i]}`
+            btnModal.textContent = nomeDasCores[i];
+
+            btnModal.addEventListener('click' , function() {
+                const corSelecionada = this.id.replace('btnControle', '');
+                mudacor (corSelecionada);
+            })
+            modalBtnSecundario.appendChild(btnModal);
+        }
+
+        
+        
+    }       
 }
+
+
 
 // Estrutura de laço, enquanto i for menor que o total de itens da listaBtnMain o laço acontece, a cada laço é atribuído ao botão da vez um ouvinte de click.
 for (i=0; i < listaBtnMain.length; i++){

@@ -1,0 +1,13 @@
+.azul {
+    filter: hue-rotate(23deg);
+}
+
+.vermelho {
+    filter: hue-rotate(185deg) brightness(90%) contrast(120%);
+    
+
+}
+
+.preto {
+    filter: grayscale(100%) brightness(50%);
+}
