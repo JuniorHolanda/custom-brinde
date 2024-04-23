@@ -8,6 +8,13 @@ const corpo = document.querySelector('#parteProdutoCorpo')
 const detalhe = document.querySelector('#parteProdutoDetalhes')
 const tampa = document.querySelector('#parteProdutoTampa')
 
+const objetoNecEv = {
+    bolso: 'assets/img/nec-ev-bolso/corpo.png',
+    corpo: 'assets/img/nec-ev-bolso/bolso.png',
+    ziper: 'assets/img/nec-ev-bolso/ziper.png',
+    sombra: 'assets/img/nec-ev-bolso/sombra.png'
+}
+
 
 //----------------------- Cria os botões de cores e atribuem classe -----------------------------
 
