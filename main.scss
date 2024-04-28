@@ -1,0 +1,22 @@
+@import url('reset.css');
+
+.myStudioPro {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template: 1fr 2fr / 1fr 1fr; //linha linha / coluna coluna
+    .container-mockup{
+        background-color: #0dff21;
+        grid-area: 1 / 1 / 3 / 2 ; //linha_inicio / coluna_inicio / linha_fim / coluna_fim;
+    }
+
+    .container-user{
+        background-color: #cc00ff;
+        grid-area: 1 / 2 / 2 / 3 ;
+    }
+
+    .container-panel{
+        background-color: #00d9ff;
+        grid-area: 2 / 2 / 3 / 3;
+    }
+}

@@ -1,3 +1,4 @@
+
 // botões principais
 const listaBtnMain = document.querySelectorAll('.btnPrincipais')
 
