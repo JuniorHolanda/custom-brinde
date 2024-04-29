@@ -36,6 +36,21 @@ function showProductCategory (id) {
         const productList = productCategories[id];
         for(let i = 0; i < productList.length; i++){
             console.log(productList)
+
+            //cria o card com a imagem do produto
+            const cardProdduct = document.createElement('div')
+            cardProdduct.classList = 'list-products'
+            
+            //cria a img do prododuto
+            const cardImg = document.createElement('img')
+            cardImg.classList = 'list-product-img'
+            cardImg.src = '/assets/img/categorias/necessaire.jpg'
+           
+            //inseri a imagem no card
+            cardProdduct.appendChild(cardImg)
+           
+            //iseri o card no containerForProduct
+            containerForProduct.appendChild(cardProdduct)
         }
     }
 }
