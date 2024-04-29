@@ -19,7 +19,7 @@ const listProduct = [
     'bolsaPst',
     'estojoTriang',
     'miniBagVani',
-    'necEvBolso',
+    'necessaireEvBolso',
     'termicaJl'];
 
 // sempre que adicionar um produto é necessário adicionar a medida, seguindo a ordem cronológica
@@ -32,9 +32,16 @@ const medidas = [
     'Lar - 60cm | Alt - 00cm | Comp - 00cm',
 ]
 
-// lista com os objetos criados na iteração.
-export const product = [];
-
+// lista com as categorias dos objetos criados na iteração.
+export const bolsa = [];
+export const necessaire = [];
+export const estojo = [];
+export const mala = [];
+export const carteira = [];
+export const termica = [];
+export const mochila = [];
+export const portaBloco = [];
+export const diversos = [];
 
 for (let i = 0; i < listProduct.length; i++){
     // proriedade comum a todos os objetos 
@@ -81,7 +88,41 @@ for (let i = 0; i < listProduct.length; i++){
         base = `assets/img/${nome}/base.png`
      }
 
-    const newProduct = new MoldProduct (nome , medida , ajuste , corpo , alca, ziper, vivo, tampa, debrum , base);
+     // expressões regulares que vão direcionar o objeto para a respectiva categoria
 
-    product.push(newProduct);
+    
+
+    const newProduct = new MoldProduct (nome , medida , ajuste , corpo , alca, ziper, vivo, tampa, debrum , base);
+    
+    let category = listProduct[i]
+    
+    if (category.match(/^bolsa/)) {
+        bolsa.push(newProduct);
+
+    } else if (category.match(/^necessaire/)) {
+        necessaire.push(newProduct)
+
+    } else if (category.match(/^estojo/)) {
+        estojo.push(newProduct)
+
+    } else if (category.match(/^mala/)) {
+        mala.push(newProduct)
+
+    } else if (category.match(/^carteira/)) {
+        carteira.push(newProduct)
+        
+    } else if (category.match(/^termica/)) {
+        termica.push(newProduct)
+
+    } else if (category.match(/^mochila/)) {
+        mochila.push(newProduct)
+
+    } else if (category.match(/^portaBloco/)) {
+        portaBloco.push(newProduct)
+
+    } else{
+        diversos.push(newProduct)
+    }
+
+    ;
 }
