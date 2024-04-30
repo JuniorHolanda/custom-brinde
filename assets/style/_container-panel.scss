@@ -1,4 +1,5 @@
 @import 'variable';
+@import 'animation';
 
 .container-panel{
     display: flex;
@@ -23,7 +24,9 @@
             padding: 20px 0;
             gap: 5px;
             color: $sixth-color;
-
+            cursor: pointer;
+            animation-name: entrance-animation;
+            animation-duration: 1.5s;
             .container-img-category{
                 display: flex;
                 align-items: center;
@@ -31,6 +34,9 @@
                 max-height: 80px;
                 border-radius: 30px;
                 overflow: hidden;
+                &:hover{
+                    box-shadow: 0 0 20px $glass-color;
+                }
                 .img-category{
                     max-width: 150px;
                     object-fit: cover;

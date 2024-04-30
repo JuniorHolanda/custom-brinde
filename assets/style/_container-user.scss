@@ -50,7 +50,7 @@
             color: $fourt-color;
             
             &:focus{
-                box-shadow: 0 0 20px #13f2f23b;
+                box-shadow: 0 0 20px $glass-color;
             }
             &::placeholder{
                 color: $fourt-color;

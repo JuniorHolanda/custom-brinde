@@ -1,5 +1,5 @@
 class MoldProduct {
-    constructor(nome, medidas, ajuste, corpo, alca, ziper, vivo, tampa, debrum, base ) {
+    constructor(nome, medidas, ajuste, corpo, card , alca, ziper, vivo, tampa, debrum, base, ) {
         this.nome = nome;
         this.medidas = medidas;
         this.ajuste = ajuste;
@@ -10,6 +10,7 @@ class MoldProduct {
         this.tampa = tampa;
         this.debrum = debrum;
         this.base = base;
+        this.card = card;
     }
 }
 
@@ -49,6 +50,7 @@ for (let i = 0; i < listProduct.length; i++){
     const medida = medidas[i]
     const ajuste = `assets/img/${nome}/ajuste.jpg`;
     const corpo = `assets/img/${nome}/corpo.png`;
+    const card = `assets/img/${nome}/card.jpg`
 
     // propriedades que variam nos objetos
     let alca = '';
@@ -92,7 +94,7 @@ for (let i = 0; i < listProduct.length; i++){
 
     
 
-    const newProduct = new MoldProduct (nome , medida , ajuste , corpo , alca, ziper, vivo, tampa, debrum , base);
+    const newProduct = new MoldProduct (nome , medida , ajuste , corpo , card , alca, ziper, vivo, tampa, debrum , base);
     
     let category = listProduct[i]
     
