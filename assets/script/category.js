@@ -28,6 +28,10 @@ const domCategory = document.querySelectorAll('.category');
 //referencia o container dos produtos
 const containerForMain = document.querySelector('#containerForMain');
 
+//cria o card para a imagem do produto
+const cardProdduct = document.createElement('div');
+cardProdduct.classList = 'list-products';
+
 //cria um container para os produtos da categoria
 const containerMockup =  document.createElement('div');
 containerMockup.classList.add('container-mockup')
@@ -38,26 +42,34 @@ function showProductCategory (id) {
     if (id in productCategories) {
         // Acessa a lista de produtos com base no ID
         const productList = productCategories[id];
-        for(let i = 0; i < productList.length; i++){
+        
+        if (containerForMain.contains(containerMockup)){
+            containerForMain.removeChild(containerMockup);
+            containerMockup.removeChild(cardProdduct);
+            cardProdduct.removeChild(cardImg);
 
-            //cria o card com a imagem do produto
-            const cardProdduct = document.createElement('div');
-            cardProdduct.classList = 'list-products';
+            // criar botão usar p desable = true
             
-            //cria a img do prododuto
-            const cardImg = document.createElement('img');
-            cardImg.classList = 'list-product-img';
-            //referencia o caminho do produto baseado na propriedade card do objeto iterado
-            cardImg.src = productList[i].card
-           
-            //inclui a imagem no card
-            cardProdduct.appendChild(cardImg);
-           
-            //inclui o card no containerMockup
-            containerMockup.appendChild(cardProdduct);
+        } else {
 
-            //inclui o container mockup no containerForMain
-            containerForMain.appendChild(containerMockup)
+            for(let i = 0; i < productList.length; i++){
+
+                // usar o while
+                
+                //cria a img do prododuto
+                const cardImg = document.createElement('img');
+                cardImg.classList = 'list-product-img';
+                cardImg.src = productList[i].card
+               
+                //inclui a imagem no card
+                cardProdduct.appendChild(cardImg);
+               
+                //inclui o card no containerMockup
+                containerMockup.appendChild(cardProdduct);
+    
+                //inclui o container mockup no containerForMain
+                containerForMain.appendChild(containerMockup)
+            }
         }
     }
 }
