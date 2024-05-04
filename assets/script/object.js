@@ -35,17 +35,15 @@ const medidas = [
 ]
 
 // lista com as categorias dos objetos criados na iteração.
-    const ListCategory = [
-        {bolsa: []},
-        {necessaire: []},
-        {estojo: []},
-        {mala: []},
-        {carteira: []},
-        {termica: []},
-        {mochila: []},
-        {portaBloco: []},
-        {diversos: []},
-    ]
+export const bolsa =  [];
+export const necessaire =  [];
+export const estojo =  [];
+export const mala =  [];
+export const carteira =  [];
+export const termica =  [];
+export const mochila =  [];
+export const portaBloco =  [];
+export const diversos =  [];
 
 
 for (let i = 0; i < listProduct.length; i++){
