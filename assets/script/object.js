@@ -21,7 +21,8 @@ const listProduct = [
     'estojoTriang',
     'miniBagVani',
     'necessaireEvBolso',
-    'termicaJl'];
+    'termicaJl'
+];
 
 // sempre que adicionar um produto é necessário adicionar a medida, seguindo a ordem cronológica
 const medidas = [
@@ -34,20 +35,24 @@ const medidas = [
 ]
 
 // lista com as categorias dos objetos criados na iteração.
-export const bolsa = [];
-export const necessaire = [];
-export const estojo = [];
-export const mala = [];
-export const carteira = [];
-export const termica = [];
-export const mochila = [];
-export const portaBloco = [];
-export const diversos = [];
+    const ListCategory = [
+        {bolsa: []},
+        {necessaire: []},
+        {estojo: []},
+        {mala: []},
+        {carteira: []},
+        {termica: []},
+        {mochila: []},
+        {portaBloco: []},
+        {diversos: []},
+    ]
+
 
 for (let i = 0; i < listProduct.length; i++){
     // proriedade comum a todos os objetos 
     const nome = listProduct[i];
     const medida = medidas[i]
+
     const ajuste = `assets/img/${nome}/ajuste.jpg`;
     const corpo = `assets/img/${nome}/corpo.png`;
     const card = `assets/img/${nome}/card.jpg`
@@ -91,8 +96,6 @@ for (let i = 0; i < listProduct.length; i++){
      }
 
      // expressões regulares que vão direcionar o objeto para a respectiva categoria
-
-    
 
     const newProduct = new MoldProduct (nome , medida , ajuste , corpo , card , alca, ziper, vivo, tampa, debrum , base);
     
