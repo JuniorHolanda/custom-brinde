@@ -29,7 +29,11 @@ const containerForMain = document.querySelector('#containerForMain');
 
 //cria um container para os produtos da categoria
 const containerMockup =  document.createElement('div');
-containerMockup.classList.add('container-mockup')
+containerMockup.classList.add('container-mockup');
+
+//cria o card com a imagem do produto
+const cardProdduct = document.createElement('div');
+cardProdduct.classList = 'list-products';
 
 
 function showProductCategory (id) {
@@ -38,16 +42,21 @@ function showProductCategory (id) {
         // Acessa a lista de produtos com base no ID
         const productList = productCategories[id];
 
-        for(let i = 0; i < productList.length; i++){
+        const quantidadeFilhos = cardProdduct.childElementCount;
+        let cardImg = null
 
-            //cria o card com a imagem do produto
-            const cardProdduct = document.createElement('div');
-            cardProdduct.classList = 'list-products';
+        if (quantidadeFilhos >= productList.length) {
+            console.log('extrapolou')
+            cardProdduct.innerHTML = ''
+            containerMockup.innerHTML = ''
+            console.log(quantidadeFilhos)
+        }else{
             
+            for(let i = 0; i < productList.length; i++){
+    
             //cria a img do prododuto
-            const cardImg = document.createElement('img');
-            cardImg.classList = 'list-product-img';
-            //referencia o caminho do produto baseado na propriedade card do objeto iterado
+            cardImg = document.createElement('img');
+            cardImg.classList.add('list-product-img');
             cardImg.src = productList[i].card
            
             //inclui a imagem no card
@@ -59,6 +68,13 @@ function showProductCategory (id) {
             //inclui o container mockup no containerForMain
             containerForMain.appendChild(containerMockup)
         }
+        }
+        
+
+     
+
+   
+
     }
 }
 
