@@ -216,6 +216,24 @@ button, input {
   max-width: 100px;
 }
 
+.container-mockup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  animation-name: entrance-animation;
+  animation-duration: 1.5s;
+}
+.container-mockup .img-mockup {
+  position: absolute;
+  width: 600px;
+  border-radius: 20px;
+}
+
 .myStudioPro {
   display: grid;
   width: 100vw;

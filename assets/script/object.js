@@ -1,9 +1,11 @@
 class MoldProduct {
-    constructor(nome, medidas, ajuste, corpo, card , alca, ziper, vivo, tampa, debrum, base, ) {
+    constructor(nome, medidas, info, ajuste, corpo, card, bolso, alca, ziper, vivo, tampa, debrum, base, ) {
         this.nome = nome;
         this.medidas = medidas;
+        this.info = info;
         this.ajuste = ajuste;
         this.corpo = corpo;
+        this.bolso = bolso;
         this.alca = alca;
         this.ziper = ziper;
         this.vivo = vivo;
@@ -25,13 +27,23 @@ const listProduct = [
 ];
 
 // sempre que adicionar um produto é necessário adicionar a medida, seguindo a ordem cronológica
-const medidas = [
-    'Lar - 10cm | Alt - 00cm | Comp - 00cm',
-    'Lar - 20cm | Alt - 00cm | Comp - 00cm',
-    'Lar - 30cm | Alt - 00cm | Comp - 00cm',
-    'Lar - 40cm | Alt - 00cm | Comp - 00cm',
-    'Lar - 50cm | Alt - 00cm | Comp - 00cm',
-    'Lar - 60cm | Alt - 00cm | Comp - 00cm',
+const listMedidas = [
+    'Lar - 10cm | Alt - 00cm | Comp - 00cm', /*bolsaPraiaDuo*/
+    'Lar - 20cm | Alt - 00cm | Comp - 00cm', /*bolsaPst*/
+    'Lar - 30cm | Alt - 00cm | Comp - 00cm', /*estojoTriang*/
+    'Lar - 40cm | Alt - 00cm | Comp - 00cm', /*miniBagVani*/
+    'Lar - 50cm | Alt - 00cm | Comp - 00cm', /*necessaireEvBolso*/
+    'Lar - 60cm | Alt - 00cm | Comp - 00cm', /*termicaJl*/
+]
+
+// assim como as medidas, essa lista precisa ser preenchida na ordem em que novos produtos são adicionados
+const listInfoProduct = [
+    'Uma Bolsa perfeita para todas ocasiões', /*bolsaPraiaDuo*/
+    'esta é outra bolsa', /*bolsaPst*/
+    'este é um estojo', /*estojoTriang*/
+    'e isso uma minibag', /*miniBagVani*/
+    'essa necessaire', /*necessaireEvBolso*/
+    'e essa é uma térmica', /*termicaJl*/
 ]
 
 // lista com as categorias dos objetos criados na iteração.
@@ -49,7 +61,8 @@ export const diversos =  [];
 for (let i = 0; i < listProduct.length; i++){
     // proriedade comum a todos os objetos 
     const nome = listProduct[i];
-    const medida = medidas[i]
+    const medida = listMedidas[i]
+    const info = listInfoProduct[i]
 
     const ajuste = `assets/img/${nome}/ajuste.jpg`;
     const corpo = `assets/img/${nome}/corpo.png`;
@@ -61,6 +74,7 @@ for (let i = 0; i < listProduct.length; i++){
     let vivo = '';
     let tampa = '';
     let debrum = '';
+    let bolso = '';
     let base = '';
 
     // adiciona alça aos aos produtos relativos
@@ -69,34 +83,45 @@ for (let i = 0; i < listProduct.length; i++){
     }
 
     // adiciona ziper aos aos produtos relativos
-    if (nome === 'estojoTriang' || nome === 'miniBagVani' || nome === 'necEvBolso' || nome === 'termicaJl' ){
+    if (nome === 'estojoTriang' || nome === 'miniBagVani' || nome === 'necessaireEvBolso' || nome === 'termicaJl' ){
         ziper = `assets/img/${nome}/ziper.png`
     }
 
-     // adiciona vivo aos aos produtos relativos
-     if (nome === 'termicaJl'){
-        vivo = `assets/img/${nome}/vivo.png`
-     }
+    // adiciona vivo aos aos produtos relativos
+    if (nome === 'necessaireEvBolso'){
+        bolso = `assets/img/${nome}/bolso.png`
+    }
 
-     // adiciona tampa aos aos produtos relativos
-     if (nome === 'termicaJl'){
-        tampa = `assets/img/${nome}/tampa.png`
-     }
+    // adiciona vivo aos aos produtos relativos
+    if (nome === 'termicaJl'){
+       vivo = `assets/img/${nome}/vivo.png`
+    }
 
-     // adiciona debrum aos aos produtos relativos
-     if (nome === 'bolsaPraiaDuo'){
-        debrum = `assets/img/${nome}/debrum.png`
-     }
+    // adiciona vivo aos aos produtos relativos
+    if (nome === 'termicaJl'){
+       vivo = `assets/img/${nome}/vivo.png`
+    }
 
-     // adiciona base aos aos produtos relativos
-     if (nome === 'bolsaPraiaDuo'){
-        base = `assets/img/${nome}/base.png`
-     }
+    // adiciona tampa aos aos produtos relativos
+    if (nome === 'termicaJl'){
+       tampa = `assets/img/${nome}/tampa.png`
+    }
 
-     // expressões regulares que vão direcionar o objeto para a respectiva categoria
+    // adiciona debrum aos aos produtos relativos
+    if (nome === 'bolsaPraiaDuo'){
+       debrum = `assets/img/${nome}/debrum.png`
+    }
 
-    const newProduct = new MoldProduct (nome , medida , ajuste , corpo , card , alca, ziper, vivo, tampa, debrum , base);
+    // adiciona base aos aos produtos relativos
+    if (nome === 'bolsaPraiaDuo'){
+       base = `assets/img/${nome}/base.png`
+    }
     
+    // cria o produto com base na classe MoldProduct
+    const newProduct = new MoldProduct (nome , medida , info , ajuste , corpo , card , bolso , alca , ziper , vivo , tampa , debrum , base);
+     
+
+    // expressões regulares que vão direcionar o objeto para a respectiva categoria
     let category = listProduct[i]
     
     if (category.match(/^bolsa/)) {
