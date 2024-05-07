@@ -103,7 +103,17 @@ export function showProductCategory (id) {
                     //adiciona um ouvinte de click e passa o id do respectivo mockup
                     btnOpenMockup.addEventListener ('click' , () => {
 
-                        showMockup(productList[i]);
+                        showMockup(
+                            productList[i].ajuste,
+                            productList[i].corpo,
+                            productList[i].bolso,
+                            productList[i].alca,
+                            productList[i].ziper,
+                            productList[i].vivo,
+                            productList[i].tampa,
+                            productList[i].debrum,
+                            productList[i].base,
+                        );
                     })
                 });
             }

@@ -6,31 +6,42 @@ import { containerForMain } from "./category.js";
 const containerMockup = document.createElement('div');
 containerMockup.classList.add('container-mockup');
 
-const Ajuste = document.createElement('img');
-const Corpo = document.createElement('img');
-const Bolso = document.createElement('img');
-const Alca = document.createElement('img');
-const Ziper = document.createElement('img');
-const Vivo = document.createElement('img');
-const Tampa = document.createElement('img');
-const Debrum = document.createElement('img');
-const Base = document.createElement('img');
+//passa dinâmicamente os caminhos das imagens para as partes do produto e mostra no containerMain
+export function showMockup (ajuste , corpo , bolso , alca , ziper , vivo , tampa , debrum , base) {
 
-
-export function showMockup (idMockup) {
-
+    // lista com as partes dos produtos
+    const listMockupPart = [ ajuste , corpo , bolso , alca , ziper , vivo , tampa , debrum , base ];
+    
     // limpa o container principal para adicionar o mockup
     containerForMain.innerHTML = ''
 
-    const listMockupPart = [ 'ajuste' , 'corpo' , 'bolso' , 'alca' , 'ziper' , 'vivo' , 'tampa' , 'debrum' , 'base' ];
+    // itera sobre a listMockupPart e cria uma imagem pra cada e insere no containerMockup
+    for (let i = 0; i < listMockupPart.length ; i++) {
+        const imgMockup = document.createElement('img')
+        imgMockup.src = listMockupPart[i]
+        imgMockup.classList.add('img-mockup')
+        containerMockup.appendChild(imgMockup)
+        containerForMain.appendChild(containerMockup)
+    }
 
-for (let i = 0; i < listMockupPart.length; i++) {
-    const imgMockup = document.createElement('img')
-    imgMockup.src = `${idMockup}.${listMockupPart[i]}`;
 
 
 
-        // imagens das partes do produto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* imagens das partes do produto
         
         Ajuste.src =  idMockup.ajuste;
         Ajuste.classList.add('img-mockup')
@@ -59,7 +70,7 @@ for (let i = 0; i < listMockupPart.length; i++) {
         Base.src = idMockup.base
         Base.classList.add('img-mockup')
 
-        //adiciona os itens aos mockup
+        adiciona os itens aos mockup
         containerMockup.appendChild(Ajuste);
         containerMockup.appendChild(Corpo);
         containerMockup.appendChild(Bolso);
@@ -69,19 +80,8 @@ for (let i = 0; i < listMockupPart.length; i++) {
         containerMockup.appendChild(Tampa);
         containerMockup.appendChild(Debrum);
 
-        //adiciona o containerMockup ao container principal
+        adiciona o containerMockup ao container principal
         containerForMain.appendChild(containerMockup);
-
-}
+        */
    
-}   /*
-    console.log(idMockup.ajuste)
-    console.log(idMockup.corpo)
-    console.log(idMockup.bolso)
-    console.log(idMockup.alca)
-    console.log(idMockup.ziper)
-    console.log(idMockup.vivo)
-    console.log(idMockup.tampa)
-    console.log(idMockup.debrum)
-    console.log(idMockup.base)
-    */
+}
