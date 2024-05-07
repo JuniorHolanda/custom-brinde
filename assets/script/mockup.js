@@ -4,62 +4,75 @@ import { containerForMain } from "./category.js";
 
 //cria o container para as imagens do mockup
 const containerMockup = document.createElement('div');
-containerMockup.classList.add('container-mockup')
+containerMockup.classList.add('container-mockup');
+
+const Ajuste = document.createElement('img');
+const Corpo = document.createElement('img');
+const Bolso = document.createElement('img');
+const Alca = document.createElement('img');
+const Ziper = document.createElement('img');
+const Vivo = document.createElement('img');
+const Tampa = document.createElement('img');
+const Debrum = document.createElement('img');
+const Base = document.createElement('img');
 
 
 export function showMockup (idMockup) {
+
     // limpa o container principal para adicionar o mockup
     containerForMain.innerHTML = ''
 
-    // imagens das partes do produto
-    const mockupAjuste = document.createElement('img');
-    mockupAjuste.src =  idMockup.ajuste;
-    mockupAjuste.classList.add('img-mockup')
+    const listMockupPart = [ 'ajuste' , 'corpo' , 'bolso' , 'alca' , 'ziper' , 'vivo' , 'tampa' , 'debrum' , 'base' ];
 
-    const mockupCorpo = document.createElement('img');
-    mockupCorpo.src = idMockup.corpo;
-    mockupCorpo.classList.add('img-mockup')
+for (let i = 0; i < listMockupPart.length; i++) {
+    const imgMockup = document.createElement('img')
+    imgMockup.src = `${idMockup}.${listMockupPart[i]}`;
 
-    const mockupBolso = document.createElement('img');
-    mockupBolso.src = idMockup.bolso
-    mockupBolso.classList.add('img-mockup')
 
-    const mockupAlca = document.createElement('img');
-    mockupAlca.src = idMockup.alca
-    mockupAlca.classList.add('img-mockup')
 
-    const mockupZiper = document.createElement('img');
-    mockupZiper.src = idMockup.ziper
-    mockupZiper.classList.add('img-mockup')
+        // imagens das partes do produto
+        
+        Ajuste.src =  idMockup.ajuste;
+        Ajuste.classList.add('img-mockup')
 
-    const mockupVivo = document.createElement('img');
-    mockupVivo.src = idMockup.vivo
-    mockupVivo.classList.add('img-mockup')
+        Corpo.src = idMockup.corpo;
+        Corpo.classList.add('img-mockup')
 
-    const mockupTampa = document.createElement('img');
-    mockupTampa.src = idMockup.tampa
-    mockupTampa.classList.add('img-mockup')
+        Bolso.src = idMockup.bolso
+        Bolso.classList.add('img-mockup')
 
-    const mockupDebrum = document.createElement('img');
-    mockupDebrum.src = idMockup.debrum
-    mockupDebrum.classList.add('img-mockup')
+        Alca.src = idMockup.alca
+        Alca.classList.add('img-mockup')
 
-    const mockupBase = document.createElement('img');
-    mockupBase.src = idMockup.base
+        Ziper.src = idMockup.ziper
+        Ziper.classList.add('img-mockup')
 
-    //adiciona os itens aos mockup
-    containerMockup.appendChild(mockupAjuste);
-    containerMockup.appendChild(mockupCorpo);
-    containerMockup.appendChild(mockupBolso);
-    containerMockup.appendChild(mockupAlca);
-    containerMockup.appendChild(mockupZiper);
-    containerMockup.appendChild(mockupVivo);
-    containerMockup.appendChild(mockupTampa);
-    containerMockup.appendChild(mockupDebrum);
-    containerMockup.appendChild(mockupDebrum);
+        Vivo.src = idMockup.vivo
+        Vivo.classList.add('img-mockup')
 
-    //adiciona o containerMockup ao container principal
-    containerForMain.appendChild(containerMockup);
+        Tampa.src = idMockup.tampa
+        Tampa.classList.add('img-mockup')
+
+        Debrum.src = idMockup.debrum
+        Debrum.classList.add('img-mockup')
+
+        Base.src = idMockup.base
+        Base.classList.add('img-mockup')
+
+        //adiciona os itens aos mockup
+        containerMockup.appendChild(Ajuste);
+        containerMockup.appendChild(Corpo);
+        containerMockup.appendChild(Bolso);
+        containerMockup.appendChild(Alca);
+        containerMockup.appendChild(Ziper);
+        containerMockup.appendChild(Vivo);
+        containerMockup.appendChild(Tampa);
+        containerMockup.appendChild(Debrum);
+
+        //adiciona o containerMockup ao container principal
+        containerForMain.appendChild(containerMockup);
+
+}
    
 }   /*
     console.log(idMockup.ajuste)

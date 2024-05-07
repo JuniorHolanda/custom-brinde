@@ -53,9 +53,7 @@ const infoProdcut = document.createElement('p');
 //cria botão para editar
 const btnOpenMockup = document.createElement('button');
 btnOpenMockup.textContent = 'Ediatar produto'
-btnOpenMockup.classList.add('btn-open-mockup')
-
-
+btnOpenMockup.classList.add('btn-open-mockup');
 
 export function showProductCategory (id) {
     // Verifica se o ID passado existe no mapeamento
