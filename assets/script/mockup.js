@@ -7,7 +7,12 @@ import { createBtnColor } from "./editColorsMockup.js";
 const containerMockup = document.createElement('div');
 containerMockup.classList.add('container-mockup');
 
-const controlForProducts = document.querySelector('#controlForProducts')
+//referencia o container para os botões de controle
+export const controlForProducts = document.querySelector('#controlForProducts');
+
+//cria o container para as imagens do mockup
+const containerBtnPartProduct = document.createElement('div');
+containerMockup.classList.add('container-btn-product-part');
 
 
 //passa dinâmicamente os caminhos das imagens para as partes do produto e mostra no containerMain
@@ -34,11 +39,12 @@ for (let i = 0; i < listMockupPart.length ; i++) {
             // CHAT GPT - Extrai apenas o nome da parte do produto do caminho do arquivo 
             const fileName = listMockupPart[i].split('/').pop().split('.')[0];
             
-            //cria botões de edicao para cada parte que for diferente de vazio
+            //cria botões de ediçãao para cada parte que for diferente de vazio
             const btnPartProduct = document.createElement('button');
             btnPartProduct.textContent = fileName;
-            controlForProducts.appendChild(btnPartProduct);
-            btnPartProduct.addEventListener('click' , () => createBtnColor ());
+            containerBtnPartProduct.appendChild(btnPartProduct)
+            controlForProducts.appendChild(containerBtnPartProduct);
+            btnPartProduct.addEventListener('click' , () => createBtnColor (fileName));
         }
     }
 }

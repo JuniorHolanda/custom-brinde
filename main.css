@@ -234,6 +234,10 @@ button, input {
   border-radius: 20px;
 }
 
+.muda-cor {
+  filter: hue-rotate(180deg);
+}
+
 .myStudioPro {
   display: grid;
   width: 100vw;
