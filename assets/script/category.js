@@ -43,12 +43,15 @@ const containerDetailsForProduct = document.querySelector('#containerDetailsForP
 
 //cria o título do produto
 const titleProduct = document.createElement('h2');
+titleProduct.classList.add('title-product')
 
 //cria as medidas do produto
 const measuresProdcut = document.createElement('p');
+measuresProdcut.classList.add('measures-prodcut')
 
-//cria as medidas do produto
+//cria as informações do produto
 const infoProdcut = document.createElement('p');
+infoProdcut.classList.add('info-producut');
 
 //cria botão para editar
 const btnOpenMockup = document.createElement('button');

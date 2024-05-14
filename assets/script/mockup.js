@@ -12,6 +12,7 @@ export const controlForProducts = document.querySelector('#controlForProducts');
 
 //cria o container para as imagens do mockup
 const containerBtnPartProduct = document.createElement('div');
+containerBtnPartProduct.classList.add('btn-party-edit')
 containerMockup.classList.add('container-btn-product-part');
 
 
@@ -41,6 +42,7 @@ for (let i = 0; i < listMockupPart.length ; i++) {
             
             //cria botões de ediçãao para cada parte que for diferente de vazio
             const btnPartProduct = document.createElement('button');
+            btnPartProduct.classList.add('btn-party')
             btnPartProduct.textContent = fileName;
             containerBtnPartProduct.appendChild(btnPartProduct)
             controlForProducts.appendChild(containerBtnPartProduct);

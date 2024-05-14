@@ -2,12 +2,17 @@ import { controlForProducts } from "./mockup.js";
 
 const listBtnColor = ['Vermelho' , 'Azul' , 'Amarelo']; 
 const containerBtnColors = document.createElement('div');
+containerBtnColors.classList.add('container-btn-colors')
 
 export function createBtnColor (imagem) {
-    const imgPart = document.querySelectorAll('.img-mockup')
+    const listImgPart = document.querySelectorAll('.img-mockup')
 
     function changeColorPartProduct (color) {
-        imgPart[3].classList.add('muda-cor')
+        for (let i = 0; i < listImgPart.length; i++){
+            const imgPart = listImgPart[i]
+            imgPart.classList.add(color)
+            console.log(imgPart)
+        }
     }
 
     // itera sobre o listBtnColor e cria os botões de cores
@@ -19,23 +24,4 @@ export function createBtnColor (imagem) {
         controlForProducts.appendChild(containerBtnColors);
         btnColor.addEventListener('click' , () => changeColorPartProduct (listBtnColor[i]));
     }
-   
 }
-
-
-
-
-
-
-/*
-
-
-
-
-// itera sobre o listBtnColor e cria os botões de cores
-for (let i = 0; i < listBtnColor.length; i++){
-    createBtnColor(listBtnColor[i])
-}
-
-
-*/
