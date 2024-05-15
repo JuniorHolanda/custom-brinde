@@ -72,6 +72,7 @@ export function showProductCategory (id) {
             cardProdduct.innerHTML = ''
             containerMockup.innerHTML = ''
             containerDetailsForProduct.innerHTML = ''
+            containerForMain.innerHTML = ''
             
         }else{
             
@@ -83,6 +84,8 @@ export function showProductCategory (id) {
                 cardImg.id = productList[i].nome
                 cardImg.src = productList[i].card
             
+                //if ()
+
                 //inclui a imagem no card
                 cardProdduct.appendChild(cardImg);
             
