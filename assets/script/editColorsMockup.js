@@ -16,6 +16,7 @@ export function createBtnColor (imagem) {
             const nameProduct = listImgPart[i].src
             if (nameProduct.includes(imagem)){
                 listImgPart[i].classList.add(`color-part-${color}`)
+                console.lo
             }
         }
 
@@ -32,3 +33,4 @@ export function createBtnColor (imagem) {
         btnColor.addEventListener('click' , () => changeColorPartProduct (listBtnColor[i]));
     }
 }
+
