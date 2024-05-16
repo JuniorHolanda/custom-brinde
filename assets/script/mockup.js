@@ -5,66 +5,65 @@ import { createBtnColor } from "./editColorsMockup.js";
 
 //cria o container para as imagens do mockup
 const containerMockup = document.createElement('div');
-containerMockup.classList.add('container-mockup');
+containerMockup.classList.add('container-mockup' , 'container-btn-product-part');
 
 //referencia o container para os botões de controle
 export const controlForProducts = document.querySelector('#controlForProducts');
 
-//cria o container para as imagens do mockup
+//cria o container para os botões de edição do corpo
 const containerBtnPartProduct = document.createElement('div');
 containerBtnPartProduct.classList.add('btn-party-edit');
-containerMockup.classList.add('container-btn-product-part');
 
-//cria o container para as imagens do mockup
+//cria uma variavel do tipo null para ser modificada na iteração futura
 let btnPartProduct = null;
 
 //passa dinâmicamente os caminhos das imagens para as partes do produto e mostra no containerMain
 export function showMockup (ajuste , corpo , bolso , alca , ziper , vivo , tampa , debrum , base) {
 
-    // lista com as partes dos produtos
+    // adiciona todos os parâmetros, inclusive os vazios recebidos numa lista com as partes dos produtos
     const listMockupPart = [ ajuste , corpo , bolso , alca , ziper , vivo , tampa , debrum , base ];
     
-    // limpa o container principal para adicionar o mockup
+    // verifica se o container principal possui algum filho, a condição sempre será verdadeira
     if (containerForMain.childElementCount > 0) {
-        containerForMain.innerHTML = ''
-        
-        // itera sobre a listMockupPart e cria uma imagem pra cada e insere no containerMockup
-        const ChildContainerBtn = containerBtnPartProduct.childElementCount
-        
+            //limpa o container para adicionar os novos elementos
+            containerForMain.innerHTML = '';
+            controlForProducts.innerHTML = '';
 
-        if (ChildContainerBtn > 0) {
-            console.log('limpou');
-            ChildContainerBtn = 0
+    }
 
-        } else{
+    // verifica so o container principal está vazio, SE SIM ele remove os botões e os produtos e esvazia o container
+    if (containerBtnPartProduct.childElementCount > 0) {
 
-            
+        console.log(btnPartProduct)
+
+        // SE NÃO ele cria as partes do produto e adiciona os botões
+    } else {
         for (let i = 0; i < listMockupPart.length ; i++) {
-
+            //filtro que seleciona somente as propriedades que não são vazias da lista de partes
             if (listMockupPart[i] !== '') {
-                const imgMockup = document.createElement('img');
-                imgMockup.src = listMockupPart[i];
-                imgMockup.classList.add('img-mockup');
-                containerMockup.appendChild(imgMockup);
-                containerForMain.appendChild(containerMockup);
-    
-                //remove o parametro ajuste e segue o fluxo
-                if (listMockupPart[i] !== ajuste && containerBtnPartProduct.childElementCount < listMockupPart.length ){
-                        // CHAT GPT - Extrai apenas o nome da parte do produto do caminho do arquivo 
-                    const fileName = listMockupPart[i].split('/').pop().split('.')[0];
+                
+                const imgMockup = document.createElement('img');//cria um elemento do tipo img para receber a imagem passada pela lista
+                imgMockup.src = listMockupPart[i];//informa um caminho para a imagem recebido da lista
+                imgMockup.classList.add('img-mockup');// adiciona uma classe ao elemento imagem
+                containerMockup.appendChild(imgMockup);//adiciona a imagem como filho do container mockup
+                containerForMain.appendChild(containerMockup);// adiciona o container mockup como filho do container principal
+                
+                // CHAT GPT - Extrai apenas o nome da parte do produto do caminho do arquivo 
+                const fileName = listMockupPart[i].split('/').pop().split('.')[0];
+                
+                if( listMockupPart[i] !== ajuste){
+                    btnPartProduct = document.createElement('button');// muda o valor de btnProduct de null para um botão
+                    btnPartProduct.classList.add('btn-party')// adiciona classe ao botão
+                    btnPartProduct.textContent = fileName; // adiciona o nome do botão com a parte extraída e adicionada ao fileName, nome da parte do produto
                     
-                        //cria botões de edição para cada parte que for diferente de vazio
-                    btnPartProduct = document.createElement('button');
-                    btnPartProduct.classList.add('btn-party')
-                    btnPartProduct.textContent = fileName;
-                    containerBtnPartProduct.appendChild(btnPartProduct)
-                    controlForProducts.appendChild(containerBtnPartProduct);
-                    btnPartProduct.addEventListener('click' , () => createBtnColor (fileName));
-                } else if (listMockupPart[i] !== '') {
-                    //console.log('remover');
+                    
+                    
+                    containerBtnPartProduct.appendChild(btnPartProduct)// adiciona a parte do produto o botão como filho  do container de partes
+                    controlForProducts.appendChild(containerBtnPartProduct); // adiciona o container de botões container de controle do produto
+                    btnPartProduct.addEventListener('click' , () => createBtnColor (fileName)); //adiciona um ouvinte ao botão que chama a função que cria os botões de cores com o argumento o nome da parte
                 }
             }
         }
-        }
     }
+        //itera sobre cada item da lista de partes que recebeu seus itens dinamicamente, alguns estão vazios e outros com partes do produto que chamou a atual função showMockup
 }
