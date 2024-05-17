@@ -8,6 +8,12 @@ import { mochila } from './object.js';
 import { portaBloco } from './object.js';
 import { diversos } from './object.js';
 
+
+import { controlForProducts } from './mockup.js';
+import { containerBtnPartProduct } from './mockup.js';
+import { btnPartProduct } from './mockup.js';
+
+
 //importa a função do mockup
 import { showMockup } from './mockup.js'
 
@@ -69,10 +75,16 @@ export function showProductCategory (id) {
         // verifica se o card já está na tela e remove, ou inclui
         if (quantidadeFilhos >= productList.length) {
             console.log('extrapolou')
-            cardProdduct.innerHTML = ''
-            containerMockup.innerHTML = ''
-            containerDetailsForProduct.innerHTML = ''
-            containerForMain.innerHTML = ''
+            cardProdduct.innerHTML = '';
+            containerMockup.innerHTML = '';
+            containerDetailsForProduct.innerHTML = '';
+            containerForMain.innerHTML = '';
+            controlForProducts.innerHTML = '';
+
+            btnPartProduct.innerHTML = '';
+            containerBtnPartProduct.innerHTML = '';
+            controlForProducts.innerHTML = '';
+            
             
         }else{
             
@@ -126,9 +138,6 @@ export function showProductCategory (id) {
         }
     }
 }
-
-            
-
 
 // itera sobre os botões de categoria e adiciona um ouvinte de click para a função ShowProdctCategory
 for (let i = 0; i < domCategory.length; i++) {
