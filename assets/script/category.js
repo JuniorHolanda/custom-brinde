@@ -70,22 +70,21 @@ export function showProductCategory (id) {
         // Acessa a lista de produtos com base no ID
         const productList = productCategories[id];
 
+        //armazena a quantidade de filhos do productlist
         const quantidadeFilhos = cardProdduct.childElementCount;
     
-        // verifica se o card já está na tela e remove, ou inclui
+        // compara a quantidade de filhos do cardProduct com productList
         if (quantidadeFilhos >= productList.length) {
             console.log('extrapolou')
+
             cardProdduct.innerHTML = '';
             containerMockup.innerHTML = '';
             containerDetailsForProduct.innerHTML = '';
             containerForMain.innerHTML = '';
-            controlForProducts.innerHTML = '';
 
             btnPartProduct.innerHTML = '';
             containerBtnPartProduct.innerHTML = '';
             controlForProducts.innerHTML = '';
-            
-            
         }else{
             
             for(let i = 0; i < productList.length; i++){
