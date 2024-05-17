@@ -78,10 +78,16 @@
 
         .container-btn-colors{
             display: flex;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+            justify-content: start;
+            .btn-color{
+                background-color: $fourt-color;
+                width: 30%;
+                padding: 10px;
+                border-radius: 30px;
+            }
         }
     }
-
-
-
 }

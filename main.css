@@ -226,7 +226,16 @@ button, input {
 }
 .panels .control-product .container-btn-colors {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  justify-content: start;
+}
+.panels .control-product .container-btn-colors .btn-color {
+  background-color: #13F2F2;
+  width: 30%;
+  padding: 10px;
+  border-radius: 30px;
 }
 
 @keyframes entrance-animation {

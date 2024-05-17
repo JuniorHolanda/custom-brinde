@@ -26,7 +26,7 @@ export function createBtnColor (imagem) {
     for (let i = 0; i < listBtnColor.length; i++){
         const btnColor = document.createElement('button');
         btnColor.textContent = listBtnColor[i];
-        btnColor.classList.add(`btn-color-${listBtnColor[i]}`);
+        btnColor.classList.add(`btn-color-${listBtnColor[i]}` , 'btn-color');
         containerBtnColors.appendChild(btnColor);
         controlForProducts.appendChild(containerBtnColors);
         btnColor.addEventListener('click' , () => changeColorPartProduct (listBtnColor[i]));
