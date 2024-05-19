@@ -14,6 +14,10 @@ import { containerBtnPartProduct } from './mockup.js';
 import { btnPartProduct } from './mockup.js';
 
 
+import { containerBtnColors } from './editColorsMockup.js';
+import { btnColor } from './editColorsMockup.js';
+
+
 //importa a função do mockup
 import { showMockup } from './mockup.js'
 
@@ -64,6 +68,9 @@ const btnOpenMockup = document.createElement('button');
 btnOpenMockup.textContent = 'Ediatar produto'
 btnOpenMockup.classList.add('btn-open-mockup');
 
+
+let btnCategory = '';
+
 export function showProductCategory (id) {
     // Verifica se o ID passado existe no mapeamento
     if (id in productCategories) {
@@ -75,16 +82,24 @@ export function showProductCategory (id) {
     
         // compara a quantidade de filhos do cardProduct com productList
         if (quantidadeFilhos >= productList.length) {
-            console.log('extrapolou')
+            console.log('iniciou')
 
+            //category
             cardProdduct.innerHTML = '';
             containerMockup.innerHTML = '';
             containerDetailsForProduct.innerHTML = '';
             containerForMain.innerHTML = '';
 
-            btnPartProduct.innerHTML = '';
+            //mockup
+
             containerBtnPartProduct.innerHTML = '';
             controlForProducts.innerHTML = '';
+            console.log(btnPartProduct)
+            console.log(controlForProducts)
+
+            //edutColorsMockup
+            containerBtnColors.innerHTML = '';
+
         }else{
             
             for(let i = 0; i < productList.length; i++){
@@ -106,6 +121,7 @@ export function showProductCategory (id) {
                 //inclui o container mockup no containerForMain
                 containerForMain.appendChild(containerMockup);
 
+                //cria o título, medidas, descrição e e btn para abrir mockup
                 cardImg.addEventListener('click' , () => {
 
                     titleProduct.textContent = cardImg.id;
@@ -141,7 +157,7 @@ export function showProductCategory (id) {
 // itera sobre os botões de categoria e adiciona um ouvinte de click para a função ShowProdctCategory
 for (let i = 0; i < domCategory.length; i++) {
 
-    let btnCategory = domCategory[i]
+    btnCategory = domCategory[i]
     btnCategory.addEventListener('click' , function () {
         //captura o id do elemento da vez no laço
         let capturaId = this.id;

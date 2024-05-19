@@ -78,7 +78,7 @@ for (let i = 0; i < listProduct.length; i++){
     let base = '';
 
     // adiciona alça aos aos produtos relativos
-    if (nome === 'bolsaPraiaDuo' || nome === 'bolsaPst' || nome === 'miniBagVani'){
+    if (nome === 'bolsaPraiaDuo' || nome === 'bolsaPst' || nome === 'miniBagVani' || nome === 'termicaJl'){
         alca = `assets/img/${nome}/alca.png`
     }
 

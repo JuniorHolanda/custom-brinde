@@ -15,7 +15,7 @@ export const containerBtnPartProduct = document.createElement('div');
 containerBtnPartProduct.classList.add('btn-party-edit');
 
 //cria uma variavel do tipo null para ser modificada na iteração futura
-export let btnPartProduct = null;
+export let btnPartProduct = '';
 
 //passa dinâmicamente os caminhos das imagens para as partes do produto e mostra no containerMain
 export function showMockup (ajuste , corpo , bolso , alca , ziper , vivo , tampa , debrum , base) {
@@ -27,7 +27,15 @@ export function showMockup (ajuste , corpo , bolso , alca , ziper , vivo , tampa
     if (containerForMain.childElementCount > 0) {
             //limpa o container para adicionar os novos elementos
             containerForMain.innerHTML = '';
+            console.log('teste de execução')
     }
+
+    if (btnPartProduct !== '')
+        {
+            btnPartProduct = ''
+            containerBtnPartProduct.innerHTML = '';
+            controlForProducts.innerHTML = '';
+        }
     
         for (let i = 0; i < listMockupPart.length ; i++) {
 
@@ -56,5 +64,4 @@ export function showMockup (ajuste , corpo , bolso , alca , ziper , vivo , tampa
             } // fecha o if
         } // fecha o for
         controlForProducts.appendChild(containerBtnPartProduct); // adiciona o container de botões container de controle do produto
-        console.log (controlForProducts);
     }//fecha função
