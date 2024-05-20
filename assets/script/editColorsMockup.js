@@ -2,6 +2,7 @@ import { controlForProducts } from "./mockup.js";
 
 export let btnColor = '';
 
+// Recebe as cores para os produtos
 const listBtnColor = ['vermelho' , 'royal' , 'amarelo' , 'roxo' , 'preto']; 
 export const containerBtnColors = document.createElement('div');
 containerBtnColors.classList.add('container-btn-colors')
