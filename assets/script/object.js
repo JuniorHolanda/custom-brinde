@@ -92,10 +92,6 @@ for (let i = 0; i < listProduct.length; i++){
         bolso = `assets/img/${nome}/bolso.png`
     }
 
-    // adiciona vivo aos aos produtos relativos
-    if (nome === 'termicaJl'){
-       vivo = `assets/img/${nome}/vivo.png`
-    }
 
     // adiciona vivo aos aos produtos relativos
     if (nome === 'termicaJl'){
