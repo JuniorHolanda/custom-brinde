@@ -27,8 +27,6 @@ export function createBtnColor (imagem) {
     if (btnColor !== '') {
         btnColor.innerHTML = '';
         containerBtnColors.innerHTML = ''
-        console.log(btnColor)
-        console.log('esvaziou o btnColor')
     }
 
     // itera sobre o listBtnColor e cria os botões de cores
